@@ -1,5 +1,6 @@
 from futu import SecurityFirm, TrdMarket
 
+from futubot.accounts import Accounts
 from futubot.indicators import Indicators
 from futubot.robot import Robot
 from Strategy.BollingerBandsStrategy import BollingerBandsStrategy
@@ -170,13 +171,14 @@ def test_macd_crossover_strategy():
 
 
 def test_bollinger_bands_strategy():
-    futubot = Robot(
+    accounts = Accounts(
         host='127.0.0.1',
         port=11111,
         filter_trdmarket=TrdMarket.HK,
         security_firm=SecurityFirm.FUTUSECURITIES,
         paper_trading=True,
     )
+    futubot = Robot(accounts=accounts)    
 
     # stocks_of_interest must be a stock not currently held.
     portfolio = futubot.create_portfolio(stocks_of_interest=['HK.00002'])
@@ -206,5 +208,5 @@ def test_bollinger_bands_strategy():
     buy_sell_signals = strategy_client.calculate_buy_sell_signals()
     assert len(buy_sell_signals['buys']) > 0
 
-    futubot.close_quote_context()
-    futubot.close_trade_context()
+    accounts.close_quote_context()
+    accounts.close_trade_context()
