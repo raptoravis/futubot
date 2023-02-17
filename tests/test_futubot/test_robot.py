@@ -138,7 +138,7 @@ def test_execute_signals():
         order_id=order_infos['HK.00002']['order_id'],
         qty=0,
         price=0,
-        trd_env=futubot.trd_env)
+        trd_env=accounts.trd_env)
     if ret == RET_OK:
         print(data)
     else:
