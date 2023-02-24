@@ -1,3 +1,6 @@
+conda create -n futubot python=3.8 -y
+conda activate futubot
+
 pip install -r requirements.txt
 
 rem "-v" for verbose option.

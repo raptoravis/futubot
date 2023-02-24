@@ -11,8 +11,9 @@
 			// "program": "${file}",
 			// "program": "tools/app.py",
 			// "args": ["configs/futubot_config.py", "--display-all-cols"], 
-			"program": "demo/app.py",
-			"args": ["demo/configs/futubot_config_demo.py", "--display-all-cols"], 
+			// "program": "demo/app.py",
+			// "args": ["demo/configs/futubot_config_demo.py", "--display-all-cols"], 
+			"program": "run_tests.py",
 			"console": "integratedTerminal",
 			"justMyCode": true
 		}

@@ -28,18 +28,40 @@ test_robot.test_create_portfolio()
 test_robot.test_create_stockframe()
 test_robot.test_get_latest_bar()
 test_robot.test_execute_signals()
+test_robot.test_get_historical_quotes()
 
 test_stockframe.test_create_frame()
 test_stockframe.test_add_rows()
 
 test_accounts.test_get_max_power()
+test_accounts.test_check_existing_orders()
+test_accounts.test_check_today_orders()
+test_accounts.test_get_account_info()
+test_accounts.test_get_account_list()
+test_accounts.test_get_historical_candles()
+test_accounts.test_get_market_state()
+test_accounts.test_get_positions()
+test_accounts.test_place_order()
+test_accounts.test_unlock_trade()
 
 test_portfolio.test_calculate_portfolio_metrics()
+test_portfolio.test_calculate_portfolio_weights()
+test_portfolio.test_get_portfolio_info()
 
 test_indicators.test_bollinger_bands()
+test_indicators.test_change_in_price()
+test_indicators.test_rsi()
+test_indicators.test_ema()
+test_indicators.test_macd()
+test_indicators.test_standard_deviation()
+test_indicators.test_stochastic_oscillator()
+test_indicators.test_sma()
 
 
 test_strategies.test_bollinger_bands_strategy()
+test_strategies.test_macd_crossover_strategy()
+test_strategies.test_rsi_strategy()
+test_strategies.test_ma_strategy()
 
 
 class Trade():
