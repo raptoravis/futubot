@@ -1,0 +1,20 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Python: Current File",
+			"type": "python",
+			"request": "launch",
+			// "program": "${file}",
+			// "program": "tools/app.py",
+			// "args": ["configs/futubot_config.py", "--display-all-cols"], 
+			"program": "demo/app.py",
+			"args": ["demo/configs/futubot_config_demo.py", "--display-all-cols"], 
+			"console": "integratedTerminal",
+			"justMyCode": true
+		}
+	]
+}
