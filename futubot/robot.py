@@ -314,7 +314,16 @@ class Robot:
             end_date = end_date.strftime('%Y-%m-%d %H:%M:%S')
             start_date = start_date.strftime('%Y-%m-%d %H:%M:%S')
 
+        num: int = 0
+
         for code in code_list:
+            if num >= 10:
+                # A maximum of 10 requests is allowed per 30 seconds.
+                print('sleep for a while, as A maximum of 10 requests is allowed per 30 seconds.')
+                time.sleep(30.1)
+                print('resume get_historical_candles')
+                num = 0
+
             historical_quotes = self.accounts.get_historical_candles(
                 code=code,
                 start=start_date,
@@ -333,6 +342,7 @@ class Robot:
             latest_price['low'] = latest_candle['low']
             latest_price['volume'] = latest_candle['volume']
             latest_prices.append(latest_price)
+            num += 1
 
         return latest_prices
 
