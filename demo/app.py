@@ -470,8 +470,9 @@ def run_futubot(n_intervals, code_name, indicator_name, start_date=end_date):
     latest_prices = futubot.get_latest_bar(start_date=start_date,
                                            end_date=end_date,
                                            demo=True)
-    stockframe.add_rows(data=latest_prices)
-    indicator_client.refresh()
+    if len(latest_prices) > 0:                             
+        stockframe.add_rows(data=latest_prices)
+        indicator_client.refresh()
 
     existing_orders = accounts.check_existing_orders(
         code_list=portfolio.holdings)

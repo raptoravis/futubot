@@ -331,17 +331,19 @@ class Robot:
                 ktype=ktype,
                 max_count=max_count)
 
-            latest_candle = historical_quotes.iloc[-1]
-            latest_candle = latest_candle.to_dict()
-            latest_price = {}
-            latest_price['time_key'] = latest_candle['time_key']
-            latest_price['code'] = latest_candle['code']
-            latest_price['open'] = latest_candle['open']
-            latest_price['close'] = latest_candle['close']
-            latest_price['high'] = latest_candle['high']
-            latest_price['low'] = latest_candle['low']
-            latest_price['volume'] = latest_candle['volume']
-            latest_prices.append(latest_price)
+            if len(historical_quotes) > 0:
+                latest_candle = historical_quotes.iloc[-1]
+                latest_candle = latest_candle.to_dict()
+                latest_price = {}
+                latest_price['time_key'] = latest_candle['time_key']
+                latest_price['code'] = latest_candle['code']
+                latest_price['open'] = latest_candle['open']
+                latest_price['close'] = latest_candle['close']
+                latest_price['high'] = latest_candle['high']
+                latest_price['low'] = latest_candle['low']
+                latest_price['volume'] = latest_candle['volume']
+                latest_prices.append(latest_price)
+                
             num += 1
 
         return latest_prices
